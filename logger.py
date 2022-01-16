@@ -5,7 +5,8 @@ import os, logging, webbrowser
 files = os.listdir('.')
 logging.basicConfig(filename='log.log',filemode='w',format='%(asctime)s - %(levelname)s %(message)s',datefmt='%H:%M:%S', encoding='utf-8', level=logging.DEBUG)
 months = {'January': '01', 'February': '02', 'March': '03', 'April': '04', 'May': '05', 'June': '06', 'July': '07',
-          'August': '08', 'September': '09', 'October': '10', 'November': '11', 'December': '12'}
+          'August': '08', 'September': '09', 'October': '10', 'November': '11', 'December': '12', 'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'Jun': '06', 'Jul': '07',
+          'Aug': '08', 'Sep': '09', 'Oc': '10', 'Nov': '11', 'Dec': '12'}
 years = ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021']
 directories = [item for item in files if '.xlsx' in item]
 
@@ -60,7 +61,7 @@ def main():
     new_test = [item for item in test[0][1:] if item != None]
     logging.info(f"Month of {mandd[1].capitalize()}, {mandd[0]} ")
     logging.info(f"Calls Offered: {new_test[0]}")
-    logging.info(f"Abandon after 30s: {new_test[1]*100}%")
+    logging.info(f"Abandon after 30s: {round(new_test[1]*100,2)}%")
     logging.info(f"FCR : {new_test[2]*100}0%")
     logging.info(f"DSAT : {new_test[3]*100}0%")
     logging.info(f"CSAT : {new_test[4]*100}0%")
